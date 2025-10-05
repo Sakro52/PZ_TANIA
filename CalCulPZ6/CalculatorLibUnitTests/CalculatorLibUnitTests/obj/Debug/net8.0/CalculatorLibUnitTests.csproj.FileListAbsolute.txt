@@ -1,0 +1,4 @@
+C:\Users\mrban\Documents\Jopa_Tanya\Jopa_Tanya\CalculatorLibUnitTests\CalculatorLibUnitTests\obj\Debug\net8.0\CalculatorLibUnitTests.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mrban\Documents\Jopa_Tanya\Jopa_Tanya\CalculatorLibUnitTests\CalculatorLibUnitTests\obj\Debug\net8.0\CalculatorLibUnitTests.AssemblyInfoInputs.cache
+C:\Users\mrban\Documents\Jopa_Tanya\Jopa_Tanya\CalculatorLibUnitTests\CalculatorLibUnitTests\obj\Debug\net8.0\CalculatorLibUnitTests.AssemblyInfo.cs
+C:\Users\mrban\Documents\Jopa_Tanya\Jopa_Tanya\CalculatorLibUnitTests\CalculatorLibUnitTests\obj\Debug\net8.0\CalculatorLibUnitTests.csproj.CoreCompileInputs.cache

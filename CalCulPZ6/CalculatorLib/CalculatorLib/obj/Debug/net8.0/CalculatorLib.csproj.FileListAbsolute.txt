@@ -1,0 +1,4 @@
+C:\Users\mrban\Documents\Jopa_Tanya\Jopa_Tanya\CalculatorLib\CalculatorLib\obj\Debug\net8.0\CalculatorLib.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mrban\Documents\Jopa_Tanya\Jopa_Tanya\CalculatorLib\CalculatorLib\obj\Debug\net8.0\CalculatorLib.AssemblyInfoInputs.cache
+C:\Users\mrban\Documents\Jopa_Tanya\Jopa_Tanya\CalculatorLib\CalculatorLib\obj\Debug\net8.0\CalculatorLib.AssemblyInfo.cs
+C:\Users\mrban\Documents\Jopa_Tanya\Jopa_Tanya\CalculatorLib\CalculatorLib\obj\Debug\net8.0\CalculatorLib.csproj.CoreCompileInputs.cache
