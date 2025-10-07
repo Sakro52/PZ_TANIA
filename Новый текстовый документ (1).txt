@@ -1,0 +1,750 @@
+﻿namespace kursach_serega
+{
+    enum AccidentCause
+    {
+        OncomingTraffic,
+        DriverCondition,
+        VehicleMalfunction,
+        TrafficViolation,
+        Other
+    }
+}
+﻿namespace kursach_serega
+{
+    enum AccidentType
+    {
+        PedestrianCollision,
+        ObstacleCollision,
+        VehicleCollision,
+        Rollover,
+        Other
+    }
+}
+﻿namespace kursach_serega
+{
+    class Driver
+    {
+        public int ID { get; set; }
+        public string FIO { get; set; }
+        public int Experience { get; set; }
+        public string LicensePlate { get; set; }
+        public string LicenseNumber { get; set; }
+    }
+}
+﻿using kursach_serega;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using TrafficAccidentSystem;
+
+namespace TrafficAccidentSystem
+{
+    internal class Program
+    {
+        static List<Driver> drivers = new List<Driver>();
+        static List<Vehicle> vehicles = new List<Vehicle>();
+        static List<TrafficPoliceDepartment> accidents = new List<TrafficPoliceDepartment>();
+        static string driverFile = "drivers.txt";
+        static string vehicleFile = "vehicles.txt";
+        static string accidentFile = "accidents.txt";
+
+        static void Main(string[] args)
+        {
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
+            Console.Title = "Система анализа ДТП";
+            bool flag = true;
+
+            // Первое меню: загрузка и добавление данных
+            while (flag)
+            {
+                Console.Clear();
+                ShowFirstMenu();
+                switch (Console.ReadKey(true).KeyChar)
+                {
+                    case '1':
+                        try
+                        {
+                            Console.Clear();
+                            LoadData();
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.WriteLine("Считывание данных успешно");
+                            Console.ResetColor();
+                            Console.Write("Хотите продолжить? (Да/Нет): ");
+                            string answer = Console.ReadLine();
+                            if (answer.ToLower() == "нет")
+                                flag = false;
+                        }
+                        catch
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("Ошибка при считывании данных");
+                            Console.ResetColor();
+                            Console.ReadKey();
+                        }
+                        break;
+                    case '2':
+                        try
+                        {
+                            Console.Clear();
+                            AddDriver();
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.WriteLine("Водитель успешно добавлен");
+                            Console.ResetColor();
+                            Console.Write("Хотите продолжить? (Да/Нет): ");
+                            string answer = Console.ReadLine();
+                            if (answer.ToLower() == "нет")
+                                flag = false;
+                        }
+                        catch
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("Ошибка, попробуйте еще раз");
+                            Console.ResetColor();
+                            Console.ReadKey();
+                        }
+                        break;
+                    case '3':
+                        try
+                        {
+                            Console.Clear();
+                            AddVehicle();
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.WriteLine("Автомобиль успешно добавлен");
+                            Console.ResetColor();
+                            Console.Write("Хотите продолжить? (Да/Нет): ");
+                            string answer = Console.ReadLine();
+                            if (answer.ToLower() == "нет")
+                                flag = false;
+                        }
+                        catch
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("Ошибка, попробуйте еще раз");
+                            Console.ResetColor();
+                            Console.ReadKey();
+                        }
+                        break;
+                    case '4':
+                        try
+                        {
+                            Console.Clear();
+                            AddAccident();
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.WriteLine("ДТП успешно добавлено");
+                            Console.ResetColor();
+                            Console.Write("Хотите продолжить? (Да/Нет): ");
+                            string answer = Console.ReadLine();
+                            if (answer.ToLower() == "нет")
+                                flag = false;
+                        }
+                        catch
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("Ошибка, попробуйте еще раз");
+                            Console.ResetColor();
+                            Console.ReadKey();
+                        }
+                        break;
+                    case '5':
+                        try
+                        {
+                            Console.Clear();
+                            RemoveAccident();
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.WriteLine("ДТП успешно удалено");
+                            Console.ResetColor();
+                            Console.Write("Хотите продолжить? (Да/Нет): ");
+                            string answer = Console.ReadLine();
+                            if (answer.ToLower() == "нет")
+                                flag = false;
+                        }
+                        catch
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("Ошибка, попробуйте еще раз");
+                            Console.ResetColor();
+                            Console.ReadKey();
+                        }
+                        break;
+                    case '6':
+                        flag = false;
+                        break;
+                    case '7':
+                        SaveData();
+                        return;
+                    default:
+                        Console.Clear();
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("Ошибка, попробуйте еще раз");
+                        Console.ResetColor();
+                        Console.ReadKey();
+                        break;
+                }
+
+                // Главное меню
+                if (!flag)
+                {
+                    bool flagMain = true;
+                    while (flagMain)
+                    {
+                        Console.Clear();
+                        ShowMainMenu();
+                        switch (Console.ReadKey(true).KeyChar)
+                        {
+                            case '1':
+                                bool flagQueries = true;
+                                while (flagQueries)
+                                {
+                                    Console.Clear();
+                                    ShowQueriesMenu();
+                                    switch (Console.ReadKey(true).KeyChar)
+                                    {
+                                        case '1':
+                                            try
+                                            {
+                                                Console.Clear();
+                                                ShowDriversWithMultipleAccidents();
+                                                Console.ForegroundColor = ConsoleColor.Green;
+                                                Console.WriteLine("Список водителей выведен");
+                                                Console.ResetColor();
+                                                Console.Write("Хотите продолжить? (Да/Нет): ");
+                                                string answer = Console.ReadLine();
+                                                if (answer.ToLower() == "нет")
+                                                    flagQueries = false;
+                                            }
+                                            catch
+                                            {
+                                                Console.ForegroundColor = ConsoleColor.Red;
+                                                Console.WriteLine("Ошибка, попробуйте еще раз");
+                                                Console.ResetColor();
+                                                Console.ReadKey();
+                                            }
+                                            break;
+                                        case '2':
+                                            try
+                                            {
+                                                Console.Clear();
+                                                ShowDriversByLocation();
+                                                Console.ForegroundColor = ConsoleColor.Green;
+                                                Console.WriteLine("Список водителей выведен");
+                                                Console.ResetColor();
+                                                Console.Write("Хотите продолжить? (Да/Нет): ");
+                                                string answer = Console.ReadLine();
+                                                if (answer.ToLower() == "нет")
+                                                    flagQueries = false;
+                                            }
+                                            catch
+                                            {
+                                                Console.ForegroundColor = ConsoleColor.Red;
+                                                Console.WriteLine("Ошибка, попробуйте еще раз");
+                                                Console.ResetColor();
+                                                Console.ReadKey();
+                                            }
+                                            break;
+                                        case '3':
+                                            try
+                                            {
+                                                Console.Clear();
+                                                ShowDriversByDate();
+                                                Console.ForegroundColor = ConsoleColor.Green;
+                                                Console.WriteLine("Список водителей выведен");
+                                                Console.ResetColor();
+                                                Console.Write("Хотите продолжить? (Да/Нет): ");
+                                                string answer = Console.ReadLine();
+                                                if (answer.ToLower() == "нет")
+                                                    flagQueries = false;
+                                            }
+                                            catch
+                                            {
+                                                Console.ForegroundColor = ConsoleColor.Red;
+                                                Console.WriteLine("Ошибка, попробуйте еще раз");
+                                                Console.ResetColor();
+                                                Console.ReadKey();
+                                            }
+                                            break;
+                                        case '4':
+                                            try
+                                            {
+                                                Console.Clear();
+                                                ShowAccidentWithMaxVictims();
+                                                Console.ForegroundColor = ConsoleColor.Green;
+                                                Console.WriteLine("Информация о ДТП выведена");
+                                                Console.ResetColor();
+                                                Console.Write("Хотите продолжить? (Да/Нет): ");
+                                                string answer = Console.ReadLine();
+                                                if (answer.ToLower() == "нет")
+                                                    flagQueries = false;
+                                            }
+                                            catch
+                                            {
+                                                Console.ForegroundColor = ConsoleColor.Red;
+                                                Console.WriteLine("Ошибка, попробуйте еще раз");
+                                                Console.ResetColor();
+                                                Console.ReadKey();
+                                            }
+                                            break;
+                                        case '5':
+                                            try
+                                            {
+                                                Console.Clear();
+                                                ShowDriversInPedestrianAccidents();
+                                                Console.ForegroundColor = ConsoleColor.Green;
+                                                Console.WriteLine("Список водителей выведен");
+                                                Console.ResetColor();
+                                                Console.Write("Хотите продолжить? (Да/Нет): ");
+                                                string answer = Console.ReadLine();
+                                                if (answer.ToLower() == "нет")
+                                                    flagQueries = false;
+                                            }
+                                            catch
+                                            {
+                                                Console.ForegroundColor = ConsoleColor.Red;
+                                                Console.WriteLine("Ошибка, попробуйте еще раз");
+                                                Console.ResetColor();
+                                                Console.ReadKey();
+                                            }
+                                            break;
+                                        case '6':
+                                            try
+                                            {
+                                                Console.Clear();
+                                                ShowAccidentCausesByFrequency();
+                                                Console.ForegroundColor = ConsoleColor.Green;
+                                                Console.WriteLine("Статистика причин выведена");
+                                                Console.ResetColor();
+                                                Console.Write("Хотите продолжить? (Да/Нет): ");
+                                                string answer = Console.ReadLine();
+                                                if (answer.ToLower() == "нет")
+                                                    flagQueries = false;
+                                            }
+                                            catch
+                                            {
+                                                Console.ForegroundColor = ConsoleColor.Red;
+                                                Console.WriteLine("Ошибка, попробуйте еще раз");
+                                                Console.ResetColor();
+                                                Console.ReadKey();
+                                            }
+                                            break;
+                                        case '7':
+                                            flagQueries = false;
+                                            break;
+                                        default:
+                                            Console.Clear();
+                                            Console.ForegroundColor = ConsoleColor.Red;
+                                            Console.WriteLine("Ошибка, попробуйте еще раз");
+                                            Console.ResetColor();
+                                            Console.ReadKey();
+                                            break;
+                                    }
+                                }
+                                break;
+                            case '2':
+                                flag = true;
+                                flagMain = false;
+                                break;
+                            case '3':
+                                SaveData();
+                                return;
+                            default:
+                                Console.Clear();
+                                Console.ForegroundColor = ConsoleColor.Red;
+                                Console.WriteLine("Ошибка, попробуйте еще раз");
+                                Console.ResetColor();
+                                Console.ReadKey();
+                                break;
+                        }
+                    }
+                }
+            }
+        }
+
+        static void ShowFirstMenu()
+        {
+            Console.ForegroundColor = ConsoleColor.DarkBlue;
+            Console.WriteLine("ПЕРВОЕ МЕНЮ");
+            Console.ResetColor();
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            Console.WriteLine("[1] Считывание данных");
+            Console.WriteLine("[2] Добавление водителя");
+            Console.WriteLine("[3] Добавление автомобиля");
+            Console.WriteLine("[4] Добавление ДТП");
+            Console.WriteLine("[5] Удаление ДТП");
+            Console.WriteLine("[6] Выход из первого меню");
+            Console.WriteLine("[7] Выход из программы для сохранения данных");
+            Console.ResetColor();
+        }
+
+        static void ShowMainMenu()
+        {
+            Console.ForegroundColor = ConsoleColor.DarkBlue;
+            Console.WriteLine("ГЛАВНОЕ МЕНЮ");
+            Console.ResetColor();
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            Console.WriteLine("[1] Запросы");
+            Console.WriteLine("[2] Вернуться в первое меню");
+            Console.WriteLine("[3] Выход из программы");
+            Console.ResetColor();
+        }
+
+        static void ShowQueriesMenu()
+        {
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            Console.WriteLine("[1] Водители с более чем одним ДТП");
+            Console.WriteLine("[2] Водители, участвовавшие в ДТП в заданном месте");
+            Console.WriteLine("[3] Водители, участвовавшие в ДТП на заданную дату");
+            Console.WriteLine("[4] ДТП с максимальным количеством пострадавших");
+            Console.WriteLine("[5] Водители, участвовавшие в наезде на пешеходов");
+            Console.WriteLine("[6] Причины ДТП по убыванию количества");
+            Console.WriteLine("[7] Выход в главное меню");
+            Console.ResetColor();
+        }
+
+        static void AddDriver()
+        {
+            Console.WriteLine("=== ДОБАВЛЕНИЕ ВОДИТЕЛЯ ===");
+            Driver d = new Driver { ID = drivers.Count + 1 };
+            Console.Write("ФИО: ");
+            d.FIO = Console.ReadLine();
+            Console.Write("Стаж (в годах): ");
+            if (int.TryParse(Console.ReadLine(), out int experience))
+                d.Experience = experience;
+            Console.Write("Гос. номер автомобиля: ");
+            d.LicensePlate = Console.ReadLine();
+            Console.Write("Номер удостоверения: ");
+            d.LicenseNumber = Console.ReadLine();
+            drivers.Add(d);
+            SaveData();
+        }
+
+        static void AddVehicle()
+        {
+            Console.WriteLine("=== ДОБАВЛЕНИЕ АВТОМОБИЛЯ ===");
+            Vehicle v = new Vehicle { ID = vehicles.Count + 1 };
+            Console.Write("Фирма: ");
+            v.Manufacturer = Console.ReadLine();
+            Console.Write("Марка: ");
+            v.Model = Console.ReadLine();
+            Console.Write("Тип кузова: ");
+            v.BodyType = Console.ReadLine();
+            Console.Write("Гос. номер: ");
+            v.LicensePlate = Console.ReadLine();
+            vehicles.Add(v);
+            SaveData();
+        }
+
+        static void AddAccident()
+        {
+            Console.WriteLine("=== ДОБАВЛЕНИЕ ДТП ===");
+            TrafficPoliceDepartment a = new TrafficPoliceDepartment { ID = accidents.Count + 1 };
+            Console.Write("Название отдела ГИБДД: ");
+            a.Name = Console.ReadLine();
+            Console.Write("Номер акта о ДТП: ");
+            a.AccidentReportNumber = Console.ReadLine();
+            Console.Write("Дата ДТП (гггг-мм-дд): ");
+            if (DateTime.TryParse(Console.ReadLine(), out DateTime date))
+                a.Date = date;
+            Console.Write("Место ДТП: ");
+            a.Location = Console.ReadLine();
+            Console.Write("Количество пострадавших: ");
+            if (int.TryParse(Console.ReadLine(), out int victims))
+                a.NumberOfVictims = victims;
+            Console.WriteLine("Выберите вид ДТП: 1-Наезд на пешехода, 2-Наезд на препятствие, 3-Столкновение, 4-Опрокидывание, 5-Другое");
+            if (int.TryParse(Console.ReadLine(), out int typeChoice))
+            {
+                switch (typeChoice)
+                {
+                    case 1:
+                        a.AccidentType = AccidentType.PedestrianCollision;
+                        break;
+                    case 2:
+                        a.AccidentType = AccidentType.ObstacleCollision;
+                        break;
+                    case 3:
+                        a.AccidentType = AccidentType.VehicleCollision;
+                        break;
+                    case 4:
+                        a.AccidentType = AccidentType.Rollover;
+                        break;
+                    default:
+                        a.AccidentType = AccidentType.Other;
+                        break;
+                }
+            }
+
+            Console.WriteLine("Выберите причину ДТП: 1-Выезд на встречку, 2-Состояние водителя, 3-Неисправность авто, 4-Нарушение ПДД, 5-Другое");
+            if (int.TryParse(Console.ReadLine(), out int causeChoice))
+            {
+                switch (causeChoice)
+                {
+                    case 1:
+                        a.Cause = AccidentCause.OncomingTraffic;
+                        break;
+                    case 2:
+                        a.Cause = AccidentCause.DriverCondition;
+                        break;
+                    case 3:
+                        a.Cause = AccidentCause.VehicleMalfunction;
+                        break;
+                    case 4:
+                        a.Cause = AccidentCause.TrafficViolation;
+                        break;
+                    default:
+                        a.Cause = AccidentCause.Other;
+                        break;
+                }
+            }
+            Console.Write("ФИО водителя: ");
+            string driverFIO = Console.ReadLine();
+            a.Driver = drivers.FirstOrDefault(d => d.FIO.Equals(driverFIO, StringComparison.OrdinalIgnoreCase));
+            if (a.Driver == null)
+            {
+                a.Driver = new Driver { ID = drivers.Count + 1, FIO = driverFIO };
+                drivers.Add(a.Driver);
+            }
+            Console.Write("Гос. номер автомобиля: ");
+            a.LicensePlate = Console.ReadLine();
+            accidents.Add(a);
+            SaveData();
+        }
+
+        static void RemoveAccident()
+        {
+            Console.WriteLine("=== УДАЛЕНИЕ ДТП ===");
+            Console.Write("Введите номер акта о ДТП: ");
+            string reportNumber = Console.ReadLine();
+            var accident = accidents.FirstOrDefault(a => a.AccidentReportNumber == reportNumber);
+            if (accident != null)
+            {
+                accidents.Remove(accident);
+                SaveData();
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("ДТП не найдено.");
+                Console.ResetColor();
+                Console.ReadKey();
+            }
+        }
+
+        static void ShowDriversWithMultipleAccidents()
+        {
+            Console.WriteLine("=== ВОДИТЕЛИ С БОЛЕЕ ЧЕМ ОДНИМ ДТП ===");
+            var driverAccidentCounts = accidents.GroupBy(a => a.Driver?.FIO)
+                                                .Where(g => g.Count() > 1)
+                                                .Select(g => new { FIO = g.Key, Count = g.Count() });
+            if (!driverAccidentCounts.Any())
+                Console.WriteLine("Нет водителей с более чем одним ДТП.");
+            else
+                foreach (var item in driverAccidentCounts)
+                    Console.WriteLine($"Водитель: {item.FIO}, Количество ДТП: {item.Count}");
+            Console.ReadKey();
+        }
+
+        static void ShowDriversByLocation()
+        {
+            Console.Write("Введите место ДТП: ");
+            string location = Console.ReadLine();
+            Console.WriteLine($"=== ВОДИТЕЛИ, УЧАСТВОВАВШИЕ В ДТП В {location.ToUpper()} ===");
+            var matchingAccidents = accidents.Where(a => a.Location.Equals(location, StringComparison.OrdinalIgnoreCase)).ToList();
+            if (!matchingAccidents.Any())
+                Console.WriteLine("ДТП в указанном месте не найдены.");
+            else
+                foreach (var accident in matchingAccidents)
+                    Console.WriteLine($"Водитель: {accident.Driver?.FIO}, Дата: {accident.Date:yyyy-MM-dd}, Акт №{accident.AccidentReportNumber}");
+            Console.ReadKey();
+        }
+
+        static void ShowDriversByDate()
+        {
+            Console.Write("Введите дату ДТП (гггг-мм-дд): ");
+            if (DateTime.TryParse(Console.ReadLine(), out DateTime date))
+            {
+                Console.WriteLine($"=== ВОДИТЕЛИ, УЧАСТВОВАВШИЕ В ДТП {date:yyyy-MM-dd} ===");
+                var matchingAccidents = accidents.Where(a => a.Date.Date == date.Date).ToList();
+                if (!matchingAccidents.Any())
+                    Console.WriteLine("ДТП на указанную дату не найдены.");
+                else
+                    foreach (var accident in matchingAccidents)
+                        Console.WriteLine($"Водитель: {accident.Driver?.FIO}, Место: {accident.Location}, Акт №{accident.AccidentReportNumber}");
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Неверный формат даты.");
+                Console.ResetColor();
+            }
+            Console.ReadKey();
+        }
+
+        static void ShowAccidentWithMaxVictims()
+        {
+            Console.WriteLine("=== ДТП С МАКСИМАЛЬНЫМ КОЛИЧЕСТВОМ ПОСТРАДАВШИХ ===");
+            var maxVictimsAccident = accidents.OrderByDescending(a => a.NumberOfVictims).FirstOrDefault();
+            if (maxVictimsAccident == null)
+                Console.WriteLine("ДТП не зарегистрированы.");
+            else
+            {
+                Console.WriteLine($"Акт №{maxVictimsAccident.AccidentReportNumber}, Дата: {maxVictimsAccident.Date:yyyy-MM-dd}");
+                Console.WriteLine($"Место: {maxVictimsAccident.Location}, Пострадавших: {maxVictimsAccident.NumberOfVictims}");
+                Console.WriteLine($"Водитель: {maxVictimsAccident.Driver?.FIO}, Вид: {maxVictimsAccident.AccidentType}, Причина: {maxVictimsAccident.Cause}");
+            }
+            Console.ReadKey();
+        }
+
+        static void ShowDriversInPedestrianAccidents()
+        {
+            Console.WriteLine("=== ВОДИТЕЛИ, УЧАСТВОВАВШИЕ В НАЕЗДЕ НА ПЕШЕХОДОВ ===");
+            var pedestrianAccidents = accidents.Where(a => a.AccidentType == AccidentType.PedestrianCollision).ToList();
+            if (!pedestrianAccidents.Any())
+                Console.WriteLine("ДТП с наездом на пешеходов не найдены.");
+            else
+                foreach (var accident in pedestrianAccidents)
+                    Console.WriteLine($"Водитель: {accident.Driver?.FIO}, Дата: {accident.Date:yyyy-MM-dd}, Акт №{accident.AccidentReportNumber}");
+            Console.ReadKey();
+        }
+
+        static void ShowAccidentCausesByFrequency()
+        {
+            Console.WriteLine("=== ПРИЧИНЫ ДТП ПО УБЫВАНИЮ КОЛИЧЕСТВА ===");
+            var causeCounts = accidents.GroupBy(a => a.Cause)
+                                       .Select(g => new { Cause = g.Key, Count = g.Count() })
+                                       .OrderByDescending(g => g.Count);
+            if (!causeCounts.Any())
+                Console.WriteLine("ДТП не зарегистрированы.");
+            else
+                foreach (var item in causeCounts)
+                    Console.WriteLine($"Причина: {item.Cause}, Количество: {item.Count}");
+            Console.ReadKey();
+        }
+
+        static void SaveData()
+        {
+            using (StreamWriter sw = new StreamWriter(driverFile))
+            {
+                foreach (var driver in drivers)
+                {
+                    sw.WriteLine($"{driver.ID},{driver.FIO},{driver.Experience},{driver.LicensePlate},{driver.LicenseNumber}");
+                }
+            }
+
+            using (StreamWriter sw = new StreamWriter(vehicleFile))
+            {
+                foreach (var vehicle in vehicles)
+                {
+                    sw.WriteLine($"{vehicle.ID},{vehicle.Manufacturer},{vehicle.Model},{vehicle.BodyType},{vehicle.LicensePlate}");
+                }
+            }
+
+            using (StreamWriter sw = new StreamWriter(accidentFile))
+            {
+                foreach (var accident in accidents)
+                {
+                    string driverFIO = accident.Driver?.FIO ?? "";
+                    sw.WriteLine($"{accident.ID},{accident.Name},{accident.AccidentReportNumber},{driverFIO},{accident.LicensePlate},{accident.Date:yyyy-MM-dd},{accident.Location},{accident.NumberOfVictims},{accident.AccidentType},{accident.Cause}");
+                }
+            }
+        }
+
+        static void LoadData()
+        {
+            if (File.Exists(driverFile))
+            {
+                using (StreamReader sr = new StreamReader(driverFile))
+                {
+                    string line;
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        var parts = line.Split(',');
+                        var driver = new Driver
+                        {
+                            ID = int.Parse(parts[0]),
+                            FIO = parts[1],
+                            Experience = int.TryParse(parts[2], out int exp) ? exp : 0,
+                            LicensePlate = parts[3],
+                            LicenseNumber = parts[4]
+                        };
+                        drivers.Add(driver);
+                    }
+                }
+            }
+
+            if (File.Exists(vehicleFile))
+            {
+                using (StreamReader sr = new StreamReader(vehicleFile))
+                {
+                    string line;
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        var parts = line.Split(',');
+                        var vehicle = new Vehicle
+                        {
+                            ID = int.Parse(parts[0]),
+                            Manufacturer = parts[1],
+                            Model = parts[2],
+                            BodyType = parts[3],
+                            LicensePlate = parts[4]
+                        };
+                        vehicles.Add(vehicle);
+                    }
+                }
+            }
+
+            if (File.Exists(accidentFile))
+            {
+                using (StreamReader sr = new StreamReader(accidentFile))
+                {
+                    string line;
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        var parts = line.Split(',');
+                        var accident = new TrafficPoliceDepartment
+                        {
+                            ID = int.Parse(parts[0]),
+                            Name = parts[1],
+                            AccidentReportNumber = parts[2],
+                            Driver = drivers.FirstOrDefault(d => d.FIO == parts[3]),
+                            LicensePlate = parts[4],
+                            Date = DateTime.TryParse(parts[5], out DateTime date) ? date : DateTime.MinValue,
+                            Location = parts[6],
+                            NumberOfVictims = int.TryParse(parts[7], out int victims) ? victims : 0,
+                            AccidentType = Enum.TryParse<AccidentType>(parts[8], out var type) ? type : AccidentType.Other,
+                            Cause = Enum.TryParse<AccidentCause>(parts[9], out var cause) ? cause : AccidentCause.Other
+                        };
+                        accidents.Add(accident);
+                    }
+                }
+            }
+        }
+    }
+}
+﻿using System;
+
+namespace kursach_serega
+{
+    class TrafficPoliceDepartment
+    {
+        public int ID { get; set; }
+        public string Name { get; set; }
+        public string AccidentReportNumber { get; set; }
+        public Driver Driver { get; set; }
+        public string LicensePlate { get; set; }
+        public DateTime Date { get; set; }
+        public string Location { get; set; }
+        public int NumberOfVictims { get; set; }
+        public AccidentType AccidentType { get; set; }
+        public AccidentCause Cause { get; set; }
+    }
+}
+﻿namespace kursach_serega
+{
+    class Vehicle
+    {
+        public int ID { get; set; }
+        public string Manufacturer { get; set; }
+        public string Model { get; set; }
+        public string BodyType { get; set; }
+        public string LicensePlate { get; set; }
+    }
+}

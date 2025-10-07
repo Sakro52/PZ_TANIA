@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<!-- saved from url=(0071)file:///C:/Users/WeirdToday/Desktop/asdasd/KursahTest/final_report.html -->
+<html lang="ru"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title>Практическая работа 8 — Отчет</title>
+  <style>
+    :root{--accent:#0b6}
+    body{font-family: 'Segoe UI', Tahoma, Arial; line-height:1.45; padding:28px; color:#111; background:#fbfcfd}
+    h1{color:var(--accent); margin-bottom:4px}
+    h2{color:#034; margin-top:30px}
+    .diagram{border:1px solid #e2e8f0; padding:12px; margin:18px 0; background:#fff; box-shadow:0 6px 18px rgba(12,34,56,0.06)}
+    .diagram-header{display:flex; align-items:center; justify-content:space-between}
+    .controls{display:flex; gap:8px}
+    .btn{background:#f4f6f8;border:1px solid #d0d7e0;padding:6px 10px;border-radius:6px;cursor:pointer}
+    .btn:hover{background:#eef3ff}
+    .svg-wrap{width:100%;height:480px;overflow:hidden;background:#fff;border-radius:4px}
+    table{border-collapse:collapse;width:100%;margin-top:10px}
+    th,td{border:1px solid #ddd;padding:8px;text-align:left}
+    pre{background:#fff; padding:10px;border:1px solid #eee}
+    footer{margin-top:36px;color:#666}
+  </style>
+</head>
+<body>
+  <h1>Практическая работа №8 — Тестирование методом «Белого ящика»</h1>
+  <p>Цель работы: Научиться использовать метод «белого ящика» для тестирования программ.</p>
+
+  <h2>Блок-схема метода AddNewspaper()</h2>
+  <div class="diagram">
+    <div class="diagram-header">
+      <div>AddNewspaper()</div>
+      <div class="controls">
+        <button class="btn" onclick="zoomIn(&#39;svg1&#39;)">Zoom+</button>
+        <button class="btn" onclick="zoomOut(&#39;svg1&#39;)">Zoom-</button>
+        <button class="btn" onclick="resetZoom(&#39;svg1&#39;)">Reset</button>
+      </div>
+    </div>
+    <div class="svg-wrap" id="wrap1">
+      <object id="svg1" data="./Практическая работа 8 — Отчет_files/AddNewspaper.svg" type="image/svg+xml" width="100%" height="100%"></object>
+    </div>
+  </div>
+
+  <h2>Блок-схема метода EditNewspaper()</h2>
+  <div class="diagram">
+    <div class="diagram-header">
+      <div>EditNewspaper()</div>
+      <div class="controls">
+        <button class="btn" onclick="zoomIn(&#39;svg2&#39;)">Zoom+</button>
+        <button class="btn" onclick="zoomOut(&#39;svg2&#39;)">Zoom-</button>
+        <button class="btn" onclick="resetZoom(&#39;svg2&#39;)">Reset</button>
+      </div>
+    </div>
+    <div class="svg-wrap" id="wrap2">
+      <object id="svg2" data="./Практическая работа 8 — Отчет_files/EditNewspaper.svg" type="image/svg+xml" width="100%" height="100%"></object>
+    </div>
+  </div>
+
+  <h2>Блок-схема метода AddNewspaperToPostOffice()</h2>
+  <div class="diagram">
+    <div class="diagram-header">
+      <div>AddNewspaperToPostOffice()</div>
+      <div class="controls">
+        <button class="btn" onclick="zoomIn(&#39;svg3&#39;)">Zoom+</button>
+        <button class="btn" onclick="zoomOut(&#39;svg3&#39;)">Zoom-</button>
+        <button class="btn" onclick="resetZoom(&#39;svg3&#39;)">Reset</button>
+      </div>
+    </div>
+    <div class="svg-wrap" id="wrap3">
+      <object id="svg3" data="./Практическая работа 8 — Отчет_files/AddNewspaperToPostOffice.svg" type="image/svg+xml" width="100%" height="100%"></object>
+    </div>
+  </div>
+
+  <h2>Блок-схема метода CalculateTotalCostInPostOffice()</h2>
+  <div class="diagram">
+    <div class="diagram-header">
+      <div>CalculateTotalCostInPostOffice()</div>
+      <div class="controls">
+        <button class="btn" onclick="zoomIn(&#39;svg4&#39;)">Zoom+</button>
+        <button class="btn" onclick="zoomOut(&#39;svg4&#39;)">Zoom-</button>
+        <button class="btn" onclick="resetZoom(&#39;svg4&#39;)">Reset</button>
+      </div>
+    </div>
+    <div class="svg-wrap" id="wrap4">
+      <object id="svg4" data="./Практическая работа 8 — Отчет_files/CalculateTotalCostInPostOffice.svg" type="image/svg+xml" width="100%" height="100%"></object>
+    </div>
+  </div>
+
+  <h2>Тестовые сценарии (по основным методам)</h2>
+  <table>
+    <thead><tr><th>№</th><th>Назначение теста</th><th>Исходные данные</th><th>Ожидаемый результат</th><th>Фактический результат</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>Добавление корректной газеты</td><td>Название='Новости', Цена='10'</td><td>Газета добавлена, цена=10</td><td>см. тест-харнесс</td></tr>
+      <tr><td>2</td><td>Добавление с некорректной ценой</td><td>Цена='abc'</td><td>Цена=0</td><td>см. тест-харнесс</td></tr>
+      <tr><td>3</td><td>Редактирование газеты с корректным номером</td><td>Номер=1</td><td>Изменения сохранены</td><td>см. тест-харнесс</td></tr>
+      <tr><td>4</td><td>Редактирование несуществующей газеты</td><td>Номер&gt;Count</td><td>Сообщение 'Неверный номер'</td><td>см. тест-харнесс</td></tr>
+      <tr><td>5</td><td>Добавление газеты в новое отделение</td><td>Отделение №5</td><td>Создано новое отделение и добавлена газета</td><td>см. тест-харнесс</td></tr>
+      <tr><td>6</td><td>Расчет суммы при пустом отделении</td><td>Нет газет</td><td>Сообщение 'Нет газет'</td><td>см. тест-харнесс</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Ответы на контрольные вопросы</h2>
+  <ul>
+    <li><strong>Почему стратегия структурного тестирования называется также стратегией «белого ящика»?</strong> — Потому что тестировщик имеет доступ к внутреннему устройству программы и проверяет выполнение всех ветвей кода.</li>
+    <li><strong>Что показывает цикломатическая сложность алгоритма?</strong> — Она показывает минимальное количество независимых путей, необходимых для полного покрытия логики программы тестами.</li>
+    <li><strong>В чем отличие критериев покрытия условий и покрытия решений/условий?</strong> — Покрытие условий проверяет все возможные логические значения отдельных условий, а покрытие решений/условий — все результаты решений и условия в совокупности.</li>
+    <li><strong>Какой из критериев «белого ящика» считается самым сильным и почему?</strong> — Комбинаторное покрытие условий, так как оно включает все комбинации значений логических выражений и решений.</li>
+    <li><strong>Приведите порядок тестирования вложенных циклов.</strong> — 1) Выбрать внутренний цикл. 2) Тестировать его при минимальных значениях внешних циклов. 3) Переходить к объемлющему циклу. 4) Повторять до верхнего уровня.</li>
+  </ul>
+
+  <h2>Вывод</h2>
+  <p>В ходе работы изучен метод тестирования программ по принципу «белого ящика». Проведено тестирование основных методов программы учёта газет, выполнено покрытие операторов, решений и условий, построены блок-схемы и потоковые графы.</p>
+
+  <footer>
+    <p>Файлы проекта: C:\Users\WeirdToday\Desktop\asdasd\KursahTest</p>
+    <p>Откройте <code>final_report.html</code> в браузере и сохраните как Word при необходимости.</p>
+  </footer>
+
+  <script>
+    // Простая функция зума: изменяем transform scale внутри SVG if possible
+    function withSvg(id, fn) {
+      const obj = document.getElementById(id);
+      if (!obj) return;
+      const svg = obj.contentDocument ? obj.contentDocument.documentElement : null;
+      if (!svg) return;
+      fn(svg);
+    }
+    function zoomIn(id){ withSvg(id, svg=>{
+        const cur = svg.getAttribute('data-scale') || '1';
+        const n = Math.min(4, parseFloat(cur)+0.25);
+        svg.setAttribute('data-scale', n);
+        svg.style.transformOrigin='0 0';
+        svg.style.transform='scale('+n+')';
+      }) }
+    function zoomOut(id){ withSvg(id, svg=>{
+        const cur = svg.getAttribute('data-scale') || '1';
+        const n = Math.max(0.25, parseFloat(cur)-0.25);
+        svg.setAttribute('data-scale', n);
+        svg.style.transformOrigin='0 0';
+        svg.style.transform='scale('+n+')';
+      }) }
+    function resetZoom(id){ withSvg(id, svg=>{
+        svg.setAttribute('data-scale', '1');
+        svg.style.transform='';
+      }) }
+  </script>
+
+</body></html>
