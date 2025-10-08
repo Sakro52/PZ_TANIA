@@ -1,0 +1,136 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\WeirdToday\\Desktop\\324234324\\NewspaperLib\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{ED81D9BD-76C0-48F2-97D3-1AC0FD63BAC0}|NewspaperLibUnitTests\\NewspaperLibUnitTests.csproj|c:\\users\\weirdtoday\\desktop\\324234324\\newspaperlib\\newspaperlibunittests\\newspapermanagerunittests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED81D9BD-76C0-48F2-97D3-1AC0FD63BAC0}|NewspaperLibUnitTests\\NewspaperLibUnitTests.csproj|solutionrelative:newspaperlibunittests\\newspapermanagerunittests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FF249AC3-A2A2-46AF-9DF3-30D6D84224D4}|NewspaperLib\\NewspaperLib.csproj|c:\\users\\weirdtoday\\desktop\\324234324\\newspaperlib\\newspaperlib\\newspaperlib.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{FF249AC3-A2A2-46AF-9DF3-30D6D84224D4}|NewspaperLib\\NewspaperLib.csproj|solutionrelative:newspaperlib\\newspaperlib.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED81D9BD-76C0-48F2-97D3-1AC0FD63BAC0}|NewspaperLibUnitTests\\NewspaperLibUnitTests.csproj|c:\\users\\weirdtoday\\desktop\\324234324\\newspaperlib\\newspaperlibunittests\\myclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED81D9BD-76C0-48F2-97D3-1AC0FD63BAC0}|NewspaperLibUnitTests\\NewspaperLibUnitTests.csproj|solutionrelative:newspaperlibunittests\\myclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FF249AC3-A2A2-46AF-9DF3-30D6D84224D4}|NewspaperLib\\NewspaperLib.csproj|c:\\users\\weirdtoday\\desktop\\324234324\\newspaperlib\\newspaperlib\\postoffice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FF249AC3-A2A2-46AF-9DF3-30D6D84224D4}|NewspaperLib\\NewspaperLib.csproj|solutionrelative:newspaperlib\\postoffice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FF249AC3-A2A2-46AF-9DF3-30D6D84224D4}|NewspaperLib\\NewspaperLib.csproj|c:\\users\\weirdtoday\\desktop\\324234324\\newspaperlib\\newspaperlib\\newspapermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FF249AC3-A2A2-46AF-9DF3-30D6D84224D4}|NewspaperLib\\NewspaperLib.csproj|solutionrelative:newspaperlib\\newspapermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FF249AC3-A2A2-46AF-9DF3-30D6D84224D4}|NewspaperLib\\NewspaperLib.csproj|c:\\users\\weirdtoday\\desktop\\324234324\\newspaperlib\\newspaperlib\\newspaper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FF249AC3-A2A2-46AF-9DF3-30D6D84224D4}|NewspaperLib\\NewspaperLib.csproj|solutionrelative:newspaperlib\\newspaper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED81D9BD-76C0-48F2-97D3-1AC0FD63BAC0}|NewspaperLibUnitTests\\NewspaperLibUnitTests.csproj|c:\\users\\weirdtoday\\desktop\\324234324\\newspaperlib\\newspaperlibunittests\\prac11unittests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED81D9BD-76C0-48F2-97D3-1AC0FD63BAC0}|NewspaperLibUnitTests\\NewspaperLibUnitTests.csproj|solutionrelative:newspaperlibunittests\\prac11unittests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "NewspaperLib.csproj",
+              "DocumentMoniker": "C:\\Users\\WeirdToday\\Desktop\\324234324\\NewspaperLib\\NewspaperLib\\NewspaperLib.csproj",
+              "RelativeDocumentMoniker": "NewspaperLib\\NewspaperLib.csproj",
+              "ToolTip": "C:\\Users\\WeirdToday\\Desktop\\324234324\\NewspaperLib\\NewspaperLib\\NewspaperLib.csproj*",
+              "RelativeToolTip": "NewspaperLib\\NewspaperLib.csproj*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-10-08T13:58:52.137Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Prac11UnitTests.cs",
+              "DocumentMoniker": "C:\\Users\\WeirdToday\\Desktop\\324234324\\NewspaperLib\\NewspaperLibUnitTests\\Prac11UnitTests.cs",
+              "RelativeDocumentMoniker": "NewspaperLibUnitTests\\Prac11UnitTests.cs",
+              "ToolTip": "C:\\Users\\WeirdToday\\Desktop\\324234324\\NewspaperLib\\NewspaperLibUnitTests\\Prac11UnitTests.cs",
+              "RelativeToolTip": "NewspaperLibUnitTests\\Prac11UnitTests.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAAAcwEoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-08T13:56:20.118Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "NewspaperManagerUnitTests.cs",
+              "DocumentMoniker": "C:\\Users\\WeirdToday\\Desktop\\324234324\\NewspaperLib\\NewspaperLibUnitTests\\NewspaperManagerUnitTests.cs",
+              "RelativeDocumentMoniker": "NewspaperLibUnitTests\\NewspaperManagerUnitTests.cs",
+              "ToolTip": "C:\\Users\\WeirdToday\\Desktop\\324234324\\NewspaperLib\\NewspaperLibUnitTests\\NewspaperManagerUnitTests.cs*",
+              "RelativeToolTip": "NewspaperLibUnitTests\\NewspaperManagerUnitTests.cs*",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-08T13:56:09.065Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MyClass.cs",
+              "DocumentMoniker": "C:\\Users\\WeirdToday\\Desktop\\324234324\\NewspaperLib\\NewspaperLibUnitTests\\MyClass.cs",
+              "RelativeDocumentMoniker": "NewspaperLibUnitTests\\MyClass.cs",
+              "ToolTip": "C:\\Users\\WeirdToday\\Desktop\\324234324\\NewspaperLib\\NewspaperLibUnitTests\\MyClass.cs",
+              "RelativeToolTip": "NewspaperLibUnitTests\\MyClass.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-08T13:56:00.461Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "NewspaperManager.cs",
+              "DocumentMoniker": "C:\\Users\\WeirdToday\\Desktop\\324234324\\NewspaperLib\\NewspaperLib\\NewspaperManager.cs",
+              "RelativeDocumentMoniker": "NewspaperLib\\NewspaperManager.cs",
+              "ToolTip": "C:\\Users\\WeirdToday\\Desktop\\324234324\\NewspaperLib\\NewspaperLib\\NewspaperManager.cs",
+              "RelativeToolTip": "NewspaperLib\\NewspaperManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAE4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-08T13:55:14.729Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PostOffice.cs",
+              "DocumentMoniker": "C:\\Users\\WeirdToday\\Desktop\\324234324\\NewspaperLib\\NewspaperLib\\PostOffice.cs",
+              "RelativeDocumentMoniker": "NewspaperLib\\PostOffice.cs",
+              "ToolTip": "C:\\Users\\WeirdToday\\Desktop\\324234324\\NewspaperLib\\NewspaperLib\\PostOffice.cs",
+              "RelativeToolTip": "NewspaperLib\\PostOffice.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-08T13:55:07.311Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Newspaper.cs",
+              "DocumentMoniker": "C:\\Users\\WeirdToday\\Desktop\\324234324\\NewspaperLib\\NewspaperLib\\Newspaper.cs",
+              "RelativeDocumentMoniker": "NewspaperLib\\Newspaper.cs",
+              "ToolTip": "C:\\Users\\WeirdToday\\Desktop\\324234324\\NewspaperLib\\NewspaperLib\\Newspaper.cs",
+              "RelativeToolTip": "NewspaperLib\\Newspaper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-08T13:54:57.325Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

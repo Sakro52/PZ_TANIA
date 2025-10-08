@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36518.9 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewspaperLib", "NewspaperLib\NewspaperLib.csproj", "{FF249AC3-A2A2-46AF-9DF3-30D6D84224D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewspaperLibUnitTests", "NewspaperLibUnitTests\NewspaperLibUnitTests.csproj", "{ED81D9BD-76C0-48F2-97D3-1AC0FD63BAC0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FF249AC3-A2A2-46AF-9DF3-30D6D84224D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF249AC3-A2A2-46AF-9DF3-30D6D84224D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF249AC3-A2A2-46AF-9DF3-30D6D84224D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF249AC3-A2A2-46AF-9DF3-30D6D84224D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED81D9BD-76C0-48F2-97D3-1AC0FD63BAC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED81D9BD-76C0-48F2-97D3-1AC0FD63BAC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED81D9BD-76C0-48F2-97D3-1AC0FD63BAC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED81D9BD-76C0-48F2-97D3-1AC0FD63BAC0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4BB37294-8236-4ED2-A51F-E64CF800D09A}
+	EndGlobalSection
+EndGlobal

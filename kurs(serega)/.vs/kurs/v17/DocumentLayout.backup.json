@@ -1,0 +1,122 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\WeirdToday\\Desktop\\kurs(serega)\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5F04B142-5CA5-43B1-A62C-978139114685}|kurs\\kurs.csproj|c:\\users\\weirdtoday\\desktop\\kurs(serega)\\kurs\\myclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F04B142-5CA5-43B1-A62C-978139114685}|kurs\\kurs.csproj|solutionrelative:kurs\\myclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F191EF2-536C-4BF3-8520-23D512E832CE}|kurstest\\kurstest.csproj|c:\\users\\weirdtoday\\desktop\\kurs(serega)\\kurstest\\prac11tests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F191EF2-536C-4BF3-8520-23D512E832CE}|kurstest\\kurstest.csproj|solutionrelative:kurstest\\prac11tests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F191EF2-536C-4BF3-8520-23D512E832CE}|kurstest\\kurstest.csproj|c:\\users\\weirdtoday\\desktop\\kurs(serega)\\kurstest\\kurstest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F191EF2-536C-4BF3-8520-23D512E832CE}|kurstest\\kurstest.csproj|solutionrelative:kurstest\\kurstest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F191EF2-536C-4BF3-8520-23D512E832CE}|kurstest\\kurstest.csproj|c:\\users\\weirdtoday\\desktop\\kurs(serega)\\kurstest\\kurstest.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{1F191EF2-536C-4BF3-8520-23D512E832CE}|kurstest\\kurstest.csproj|solutionrelative:kurstest\\kurstest.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F04B142-5CA5-43B1-A62C-978139114685}|kurs\\kurs.csproj|c:\\users\\weirdtoday\\desktop\\kurs(serega)\\kurs\\kurs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F04B142-5CA5-43B1-A62C-978139114685}|kurs\\kurs.csproj|solutionrelative:kurs\\kurs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F04B142-5CA5-43B1-A62C-978139114685}|kurs\\kurs.csproj|c:\\users\\weirdtoday\\desktop\\kurs(serega)\\kurs\\kurs.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{5F04B142-5CA5-43B1-A62C-978139114685}|kurs\\kurs.csproj|solutionrelative:kurs\\kurs.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "kurstest",
+              "DocumentMoniker": "C:\\Users\\WeirdToday\\Desktop\\kurs(serega)\\kurstest\\kurstest.csproj",
+              "RelativeDocumentMoniker": "kurstest\\kurstest.csproj",
+              "ToolTip": "C:\\Users\\WeirdToday\\Desktop\\kurs(serega)\\kurstest\\kurstest.csproj",
+              "RelativeToolTip": "kurstest\\kurstest.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-10-08T14:13:47.128Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Prac11Tests.cs",
+              "DocumentMoniker": "C:\\Users\\WeirdToday\\Desktop\\kurs(serega)\\kurstest\\Prac11Tests.cs",
+              "RelativeDocumentMoniker": "kurstest\\Prac11Tests.cs",
+              "ToolTip": "C:\\Users\\WeirdToday\\Desktop\\kurs(serega)\\kurstest\\Prac11Tests.cs",
+              "RelativeToolTip": "kurstest\\Prac11Tests.cs",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAowEYAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-08T12:23:38.753Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MyClass.cs",
+              "DocumentMoniker": "C:\\Users\\WeirdToday\\Desktop\\kurs(serega)\\kurs\\MyClass.cs",
+              "RelativeDocumentMoniker": "kurs\\MyClass.cs",
+              "ToolTip": "C:\\Users\\WeirdToday\\Desktop\\kurs(serega)\\kurs\\MyClass.cs",
+              "RelativeToolTip": "kurs\\MyClass.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAIwBoAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-08T12:23:33.929Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "kurs.csproj",
+              "DocumentMoniker": "C:\\Users\\WeirdToday\\Desktop\\kurs(serega)\\kurs\\kurs.csproj",
+              "RelativeDocumentMoniker": "kurs\\kurs.csproj",
+              "ToolTip": "C:\\Users\\WeirdToday\\Desktop\\kurs(serega)\\kurs\\kurs.csproj",
+              "RelativeToolTip": "kurs\\kurs.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-10-08T12:08:43.057Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "kurs.cs",
+              "DocumentMoniker": "C:\\Users\\WeirdToday\\Desktop\\kurs(serega)\\kurs\\kurs.cs",
+              "RelativeDocumentMoniker": "kurs\\kurs.cs",
+              "ToolTip": "C:\\Users\\WeirdToday\\Desktop\\kurs(serega)\\kurs\\kurs.cs",
+              "RelativeToolTip": "kurs\\kurs.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-06T09:33:41.557Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "kurstest.cs",
+              "DocumentMoniker": "C:\\Users\\WeirdToday\\Desktop\\kurs(serega)\\kurstest\\kurstest.cs",
+              "RelativeDocumentMoniker": "kurstest\\kurstest.cs",
+              "ToolTip": "C:\\Users\\WeirdToday\\Desktop\\kurs(serega)\\kurstest\\kurstest.cs",
+              "RelativeToolTip": "kurstest\\kurstest.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAACsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-06T09:34:32.309Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
